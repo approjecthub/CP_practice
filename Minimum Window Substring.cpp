@@ -1,79 +1,89 @@
 //https://leetcode.com/problems/minimum-window-substring/
-class Solution {
+
+class Solution
+{
 public:
-    // static string compareFreq(unordered_map<char,int> umapt, unordered_map<char,int> umaps){
-    //     for(auto it: umapt){
-    //         if (umaps.find(it.first) == umaps.end() || umaps[it.first]<it.second){
-    //             return false;
-    //         }
-    //     }
-    //     return true;
-    // }
-    string minWindow(string s, string t) {
+    string minWindow(string s, string t)
+    {
         int ns = s.length();
         int nt = t.length();
-        
-        if(ns<nt){
+
+        if (ns < nt)
+        {
             return "";
         }
-        if(ns==nt){
+        if (ns == nt)
+        {
             string ans = s;
-            sort(s.begin(),s.end());
+            sort(s.begin(), s.end());
             sort(t.begin(), t.end());
-            if(s==t){
+            if (s == t)
+            {
                 return ans;
             }
             return "";
         }
-        
-        string ans= "";
-        
-        unordered_map<char,int> umapt ;
-        
-        for(int i=0; i<nt; i++){
-            if(umapt.find(t[i]) == umapt.end()){
+
+        string ans = "";
+
+        unordered_map<char, int> umapt, umaps;
+
+        for (int i = 0; i < nt; i++)
+        {
+            if (umapt.find(t[i]) == umapt.end())
+            {
                 umapt[t[i]] = 1;
             }
-            else{
+            else
+            {
                 umapt[t[i]]++;
             }
         }
-        deque <int> dq;
-        int cnt = 0,  len=INT_MAX;
-        
-        for(int i=0; i<ns; i++){
-            
-            if(umapt.find(s[i]) != umapt.end()){
-               
-                if(umapt[s[i]]>0){
-                    cnt ++; 
-                    umapt[s[i]]--;
-                    dq.push_back(i);                    
-                }                
-                
-            }
-            
-            if(cnt == nt){
-                
-                if(i-dq.front()<len){
-                    len = i-dq.front();
-                    ans = s.substr(dq.front(), i+1);
-                }
-                if(dq.size()>0){
-                    
-                 umapt[s[dq.front()]]++;
-                    
-                    cnt--;
-                dq.pop_front();
 
+        int cnt = 0, len = INT_MAX, strt_idx = 0;
+
+        for (int i = 0; i < ns; i++)
+        {
+            if (umapt.find(s[i]) != umapt.end())
+            {
+                if (umaps.find(s[i]) == umaps.end())
+                {
+                    umaps[s[i]] = 1;
                 }
-                else{
-                    break;
+                else
+                {
+                    umaps[s[i]]++;
                 }
-                
+                if (umapt[s[i]] == umaps[s[i]])
+                {
+                    cnt += umapt[s[i]];
+                }
             }
-                
-            
+
+            if (cnt == nt)
+            {
+                while (strt_idx < i)
+                {
+                    if (umapt.find(s[strt_idx]) != umapt.end())
+                    {
+                        umaps[s[strt_idx]]--;
+                        if (umaps[s[strt_idx]] < umapt[s[strt_idx]])
+                        {
+                            cnt -= umapt[s[strt_idx]];
+                            break;
+                        }
+                    }
+                    strt_idx++;
+                }
+
+                if (len > i - strt_idx)
+                {
+                    ans = s.substr(strt_idx, i - strt_idx + 1);
+                    len = i - strt_idx;
+                }
+
+                strt_idx++;
+            }
         }
         return ans;
     }
