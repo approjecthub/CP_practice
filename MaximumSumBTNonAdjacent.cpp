@@ -8,44 +8,30 @@ struct Node
 };
 */
 
-class Solution{
-    unordered_map<Node*, int> umap;
-  public:
-    //Function to return the maximum sum of non-adjacent nodes.
+pair<int, int> solve(Node *root){
+        pair<int,int> p;
+        if(root==NULL){
+            p.first = 0;
+            p.second = 0;
+            return p;
+        }
+        pair<int, int> left = solve(root->left);//first=> included, second=>excluded
+        pair<int, int> right = solve(root->right);
+        int inc = root->data + left.second + right.second;
+        int exc = max(left.first, left.second) + max(right.first, right.second);
+        
+        p.first = inc;
+        p.second = exc;
+        return p;
+    }
     int getMaxSum(Node *root) 
     {
-        // Add your code here
-        
         if(root==NULL){
             return 0;
         }
-        if(umap.find(root)!=umap.end()){
-            return umap[root];
-        }
-        if(root->left!=NULL && root->right!=NULL){
-           
-           umap[root]= max((root->data+getMaxSum(root->left->left)
-        +getMaxSum(root->left->right)+ getMaxSum(root->right->left)
-        +getMaxSum(root->right->right)),
-        (getMaxSum(root->left) + getMaxSum(root->right)) );
-            
-        }
-        else if(root->left!=NULL ){
-            
-            umap[root]= max((root->data+getMaxSum(root->left->left)
-        +getMaxSum(root->left->right)),
-        (getMaxSum(root->left) ) );
-        }
-        else if(root->right!=NULL){
-            
-            umap[root] = max((root->data+getMaxSum(root->right->left)
-        +getMaxSum(root->right->right)),
-        ( getMaxSum(root->right)) );
-        }
         else{
-            umap[root]= root->data;
+            pair<int, int>p = solve(root);
+            return max(p.first, p.second);
         }
-        return umap[root];
         
     }
-};
