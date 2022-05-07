@@ -1,5 +1,6 @@
 //https://leetcode.com/problems/minimum-window-substring/
 
+//#################################### solution-1 ###################################################
 class Solution
 {
 public:
@@ -86,5 +87,66 @@ public:
             }
         }
         return ans;
+    }
+};
+
+//#################################### solution-2 ###################################################
+class Solution {
+public:
+    void printMap(unordered_map<char, int> &umap){
+        cout<<"###############################"<<endl;
+        for(auto it: umap){
+            if(it.second>0)
+            cout<<it.first<<" : "<<it.second<<endl;
+        }
+        cout<<"###############################"<<endl;
+    }
+    string minWindow(string s, string t) {
+        unordered_map<char, int> smap, tmap;
+        
+        for(char c: t){
+            tmap[c]++;
+        }
+        
+        int sn = s.size(), tn = t.size(), i = 0, j=0, track = 0, ansStrtIdx = 0, ansSize = 0;
+        
+        while(i<sn){
+            smap[s[i]]++;
+            if(tmap[s[i]]>0 && smap[s[i]] == tmap[s[i]]){
+                track+= tmap[s[i]];
+            }
+            // cout<<s[i]<<" , "<<tmap[s[i]]<<" , "<< smap[s[i]]<<" , "<<track<<endl;
+            if(track==tn){
+                // cout<<"before"<<endl;
+                // printMap(smap);
+                while(j<=i && track==tn){
+                    // cout<<s[j]<<" , "<<tmap[s[j]]<<" , "<<smap[s[j]]<<endl;
+                    if(tmap[s[j]]==0 || smap[s[j]]>tmap[s[j]]){
+                        smap[s[j]]--;
+                        j++;
+                    }
+                    else{
+                        break;
+                    }
+                }
+                int currAnsSize = i-j+1;
+                string currAns = s.substr(j, currAnsSize);
+                // cout<<currAns<<endl;
+                if(ansSize == 0 || ansSize> currAnsSize){
+                    ansSize = currAnsSize;
+                    ansStrtIdx = j;
+                }
+                
+                smap[s[j]]--;
+                track -= tmap[s[j]];
+                j++;
+                // cout<<j<<endl;
+                // cout<<"after"<<endl;
+                // printMap(smap);
+            }
+            i++;
+        }
+        
+        return s.substr(ansStrtIdx, ansSize);
     }
 };
