@@ -36,3 +36,34 @@ int canReach(int A[], int N)
     solve(A, N, 0, dp);
     return dp[N - 1] == -1 ? 0 : dp[N - 1];
 }
+
+// bottom up approach
+
+void solve(int A[], int N, vector<int> &dp)
+{
+    dp[0] = 1;
+    for (int i = 0; i < N; i++)
+    {
+        if (!dp[i])
+            break;
+        int m = min(A[i], N - i - 1);
+        for (int j = m; j >= 1; j--)
+        {
+            if (!dp[i + j])
+            {
+                dp[i + j] = 1;
+            }
+            else
+            {
+                break;
+            }
+        }
+    }
+}
+int canReach(int A[], int N)
+{
+    // code here
+    vector<int> dp(N, 0);
+    solve(A, N, dp);
+    return dp[N - 1];
+}
