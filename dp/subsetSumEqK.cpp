@@ -1,6 +1,23 @@
 // https://www.codingninjas.com/codestudio/problems/subset-sum-equal-to-k_1550954?leftPanelTab=0
-
+// https://leetcode.com/problems/partition-equal-subset-sum/
 #include <bits/stdc++.h>
+
+bool canPartition(vector<int> &nums)
+{
+    int sum = 0, n = nums.size();
+    for (int i = 0; i < n; i++)
+    {
+        sum += nums[i];
+    }
+
+    if (sum % 2 != 0)
+        return false;
+    else
+    {
+        int k = sum / 2;
+        return subsetSumToK(n, k, nums);
+    }
+}
 
 bool subsetSumToK(int n, int k, vector<int> &arr)
 {
