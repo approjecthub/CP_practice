@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/shortest-common-supersequence/description/
 string shortestCommonSupersequence(string s1, string s2)
 {
     int x = s1.size(), y = s2.size();
