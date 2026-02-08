@@ -1,5 +1,7 @@
 // https://www.udemy.com/course/cpp-data-structures-algorithms-levelup-prateek-narang/learn/lecture/24012150#learning-tools
 //https://leetcode.com/problems/kth-largest-element-in-an-array/
+// Topics: Quick Select, K-th Element, Divide and Conquer
+
 //return kth smallest element in the array, distinct integers
 #include <bits/stdc++.h>
 using namespace std;

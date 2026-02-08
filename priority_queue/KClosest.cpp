@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/k-closest-points-to-origin/
 //  https://www.udemy.com/course/cpp-data-structures-algorithms-levelup-prateek-narang/learn/lecture/23800866#overview
+// Topics: Heap, Priority Queue, K-th Element
 
 class Compare
 {

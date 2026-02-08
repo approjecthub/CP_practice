@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/check-if-array-pairs-are-divisible-by-k/
+// Topics: HashMap, Math, Modular Arithmetic
 
 //https://leetcode.com/problems/check-if-array-pairs-are-divisible-by-k/discuss/709212/Short-C%2B%2B-Solution-explained-with-comments
 bool canArrange(vector<int> &arr, int k)

@@ -1,4 +1,5 @@
 //https://www.geeksforgeeks.org/cutting-a-rod-dp-13/
+// Topics: Dynamic Programming, Unbounded Knapsack
 
 int cutRod(int price[], int n) {
         //code here

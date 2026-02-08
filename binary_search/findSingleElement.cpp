@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/single-element-in-a-sorted-array/
+// Topics: Binary Search, XOR, Array
 
 int singleNonDuplicate(vector<int> &nums)
 {

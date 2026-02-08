@@ -1,5 +1,7 @@
 // https://www.udemy.com/course/cpp-data-structures-algorithms-levelup-prateek-narang/learn/quiz/5209708#overview
 //https://www.geeksforgeeks.org/smallest-difference-pair-values-two-unsorted-arrays/
+// Topics: Sorting, Two Pointer
+
 #include <bits/stdc++.h>
 
 using namespace std;

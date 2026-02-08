@@ -1,5 +1,5 @@
 // https://www.geeksforgeeks.org/counting-inversions/
-
+// Topics: Merge Sort, Divide and Conquer, Counting
 
 //below both the approaches are similar(i.e merge sort)
 // ################ sol1 ######################

@@ -1,3 +1,6 @@
+// https://practice.geeksforgeeks.org/problems/longest-common-subsequence-1587115620/1
+// Topics: Dynamic Programming, LCS, String
+
 int lcs(int x, int y, string s1, string s2)
 {
     // your code here

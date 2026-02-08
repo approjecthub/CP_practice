@@ -1,4 +1,6 @@
 //https://leetcode.com/problems/break-a-palindrome/
+// Topics: String, Greedy, Palindrome
+
 #include <bits/stdc++.h>
 
 using namespace std;

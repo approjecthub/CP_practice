@@ -1,4 +1,6 @@
 // https://practice.geeksforgeeks.org/problems/form-a-palindrome2544/1
+// Topics: Dynamic Programming, LCS, Palindrome
+
 int findMinInsertions(string A)
 {
     // code here

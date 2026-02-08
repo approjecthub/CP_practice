@@ -1,4 +1,5 @@
 // https://practice.geeksforgeeks.org/problems/merge-k-sorted-arrays/1/
+// Topics: Heap, K-way Merge
 
 class Comapre
 {

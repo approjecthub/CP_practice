@@ -1,5 +1,6 @@
 //https://www.udemy.com/course/cpp-data-structures-algorithms-levelup-prateek-narang/learn/lecture/24012280#learning-tools
 //https://www.geeksforgeeks.org/place-k-elements-such-that-minimum-distance-is-maximized/
+// Topics: Binary Search, Binary Search on Answer
 //TC: O(nlogn)
 
 #include <bits/stdc++.h>

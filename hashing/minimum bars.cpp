@@ -1,5 +1,6 @@
 //minimum bars: Given a string without spaces & a list of words. Write a function that finds min bars to be added the string, so that all resulting words are found in the list
 //DSA levelup course problem:'minimum jump fox'
+// Topics: HashMap, Dynamic Programming, String
 
 #include<bits/stdc++.h>
 using namespace std;

@@ -1,4 +1,6 @@
 // https://practice.geeksforgeeks.org/problems/shortest-common-supersequence0322/1
+// Topics: Dynamic Programming, LCS, String
+
 int shortestCommonSupersequence(string s1, string s2, int x, int y)
 {
     // code here

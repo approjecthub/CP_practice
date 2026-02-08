@@ -1,5 +1,6 @@
 // finding square root using biary search
 // https://www.udemy.com/course/cpp-data-structures-algorithms-levelup-prateek-narang/learn/lecture/24012276#learning-tools
+// Topics: Binary Search, Math
 
 #include <iostream>
 using namespace std;

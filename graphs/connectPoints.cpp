@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/min-cost-to-connect-all-points/
+// Topics: Graph, MST, Prim's Algorithm
 
 class Solution
 {

@@ -1,4 +1,6 @@
 // https://leetcode.com/problems/shortest-common-supersequence/description/
+// Topics: Dynamic Programming, LCS, String
+
 string shortestCommonSupersequence(string s1, string s2)
 {
     int x = s1.size(), y = s2.size();

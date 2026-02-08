@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/minimum-cost-to-cut-a-stick/
+// Topics: Dynamic Programming, MCM, Interval DP
 
 class Solution
 {

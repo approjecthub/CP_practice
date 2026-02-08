@@ -1,4 +1,5 @@
 // https://practice.geeksforgeeks.org/problems/strongly-connected-components-kosarajus-algo/1
+// Topics: Graph, SCC, Kosaraju, DFS
 
 stack<int> st;
 void DFS(int node, vector<int> adj[], vector<int> &isVisited, bool rev)

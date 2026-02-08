@@ -1,4 +1,5 @@
 // https://practice.geeksforgeeks.org/problems/stickler-theif-1587115621/1
+// Topics: Dynamic Programming, House Robber
 
 int FindMaxSum(int arr[], int n)
 {

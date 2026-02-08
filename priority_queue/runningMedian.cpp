@@ -1,4 +1,5 @@
 // https://practice.geeksforgeeks.org/problems/find-median-in-a-stream-1587115620/1
+// Topics: Heap, Two Heaps, Median, Stream
 
 priority_queue<int> maxHeap;
 priority_queue<int, vector<int>, greater<int>> minHeap;

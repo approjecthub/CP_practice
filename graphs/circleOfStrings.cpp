@@ -1,4 +1,5 @@
 //  https://practice.geeksforgeeks.org/problems/circle-of-strings4530/1
+// Topics: Graph, DFS, Eulerian Path, String
 
 unordered_map<char, vector<char>> g;
 unordered_map<char, bool> isVisited;

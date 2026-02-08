@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/triangle/
+// Topics: Dynamic Programming, Grid
 
 // TC: O(N^2), SC: O(N)
 class Solution {

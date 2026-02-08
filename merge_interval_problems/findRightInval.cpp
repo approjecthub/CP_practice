@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/find-right-interval/
+// Topics: Interval, Binary Search, Sorting
 
     static bool customComp(vector<int> &a, vector<int>& b){
         return a[0]<b[0];

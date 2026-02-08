@@ -1,4 +1,5 @@
 // https://practice.geeksforgeeks.org/problems/matrix-chain-multiplication0303/1
+// Topics: Dynamic Programming, MCM, Interval DP
 
 int solve(int i, int j, int arr[])
 {

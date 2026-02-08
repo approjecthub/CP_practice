@@ -1,4 +1,6 @@
 //https://leetcode.com/problems/avoid-flood-in-the-city/
+// Topics: HashMap, Binary Search, Greedy
+
 class Solution {
 public:
     vector<int> avoidFlood(vector<int>& rains) {

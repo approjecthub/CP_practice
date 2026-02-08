@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/merge-intervals/
 // https://docs.google.com/document/d/1rUyk-1pioNOZvh9gp7lPbDbm0G6cEKP0QlyrlrvVQhY/edit#
+// Topics: Interval, Sorting, Array
 
     static bool comp(vector<int>& x,  vector<int>& y){
         return x[0]<y[0];

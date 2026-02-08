@@ -1,3 +1,6 @@
+// https://practice.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1
+// Topics: Graph, DFS, Cycle Detection
+
 bool DFS(unordered_map<int, vector<int>> &g, unordered_map<int, bool> &visited, int src)
 {
     visited[src] = true;

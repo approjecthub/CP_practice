@@ -1,4 +1,5 @@
 // https://practice.geeksforgeeks.org/problems/minimum-sum-partition3317/1
+// Topics: Dynamic Programming, Subset Sum, 0/1 Knapsack
 
 int minDifference(int arr[], int n)
 {

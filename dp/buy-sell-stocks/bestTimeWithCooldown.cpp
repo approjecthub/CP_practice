@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/description/
+// Topics: Dynamic Programming, State Machine
 
 int solve(vector<int> &prices, int idx, bool isBuy)
 {

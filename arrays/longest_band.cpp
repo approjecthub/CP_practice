@@ -1,4 +1,6 @@
 //https://leetcode.com/problems/longest-consecutive-sequence/
+// Topics: HashMap, Union Find, Array
+
 #include <bits/stdc++.h>
 
 using namespace std;

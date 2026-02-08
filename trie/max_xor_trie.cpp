@@ -1,4 +1,6 @@
 //given an array, find maximum xor possible using any 2 elements present in the array
+// Topics: Trie, Bit Manipulation, XOR
+
 #include <bits/stdc++.h>
 
 using namespace std;

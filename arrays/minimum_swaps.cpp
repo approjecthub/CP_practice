@@ -1,4 +1,6 @@
 // https://practice.geeksforgeeks.org/problems/minimum-swaps/1
+// Topics: Graph, Cycle, Sorting
+
 #include <bits/stdc++.h>
 using namespace std;
 

@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/find-peak-element/
 // https://www.youtube.com/watch?v=OINnBJTRrMU
+// Topics: Binary Search, Array
 
 #include <bits/stdc++.h>
 using namespace std;

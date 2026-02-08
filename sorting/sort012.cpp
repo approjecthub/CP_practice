@@ -1,6 +1,8 @@
 // https://users.monash.edu/~lloyd/tildeAlgDS/Sort/Flag/
 // https://leetcode.com/problems/sort-colors/
 //https://www.udemy.com/course/cpp-data-structures-algorithms-levelup-prateek-narang/learn/quiz/5212388#learning-tools
+// Topics: Dutch National Flag, Two Pointer, Sorting
+
 // method-1
 /*
 apply count sort, TC: O(n)

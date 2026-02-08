@@ -1,4 +1,5 @@
 // https://practice.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1/#
+// Topics: HashMap, Prefix Sum, Subarray
 
 int lenOfLongSubarr(int A[], int N, int K)
 {

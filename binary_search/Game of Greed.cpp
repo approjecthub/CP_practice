@@ -1,4 +1,5 @@
 // https://www.udemy.com/course/cpp-data-structures-algorithms-levelup-prateek-narang/learn/quiz/5235660#questions
+// Topics: Binary Search, Binary Search on Answer
 
 /*
 You are playing a game with your 'k'  friends. You have an array of N coins,

@@ -1,4 +1,6 @@
 //https://leetcode.com/problems/jump-game/
+// Topics: Dynamic Programming, Greedy, Array
+
 class Solution {
 public:
     bool canJump(vector<int>& nums) {

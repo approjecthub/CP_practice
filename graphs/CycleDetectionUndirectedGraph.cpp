@@ -1,3 +1,6 @@
+// https://practice.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1
+// Topics: Graph, BFS, DFS, Cycle Detection
+
 bool contains_cycle(int, vector<pair<int, int>> edges)
 {
 

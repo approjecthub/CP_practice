@@ -1,4 +1,5 @@
 // https://practice.geeksforgeeks.org/problems/jump-game/1
+// Topics: Dynamic Programming, Greedy
 
 int solve(int A[], int N, int i, vector<int> &dp)
 {

@@ -1,4 +1,5 @@
 // https://practice.geeksforgeeks.org/problems/palindromic-patitioning4845/1
+// Topics: Dynamic Programming, MCM, Palindrome
 
 bool isPalindrome(string str, int idx1, int idx2)
 {

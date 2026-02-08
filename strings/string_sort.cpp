@@ -1,6 +1,7 @@
+// https://www.udemy.com/course/cpp-data-structures-algorithms-levelup-prateek-narang/learn/lecture/23915474#overview
+// Topics: String, Sorting, Custom Sorting
 
 /*
-https://www.udemy.com/course/cpp-data-structures-algorithms-levelup-prateek-narang/learn/lecture/23915474#overview
 ** sort strings based on col number, where sort nature can be either numeric or lexicographical.
 Input :
 3

@@ -1,4 +1,5 @@
 // https://practice.geeksforgeeks.org/problems/replace-os-with-xs0052/1
+// Topics: Graph, DFS, Matrix, Boundary
 
 bool isValid(int r, int c, vector<vector<char>> &mat)
 {

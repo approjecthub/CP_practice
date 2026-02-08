@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/merge-intervals/
+// Topics: Greedy, Interval, Sorting
 
 #include <bits/stdc++.h>
 using namespace std;

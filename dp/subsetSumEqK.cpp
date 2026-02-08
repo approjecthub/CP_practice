@@ -1,5 +1,7 @@
 // https://www.codingninjas.com/codestudio/problems/subset-sum-equal-to-k_1550954?leftPanelTab=0
 // https://leetcode.com/problems/partition-equal-subset-sum/
+// Topics: Dynamic Programming, Subset Sum, 0/1 Knapsack
+
 #include <bits/stdc++.h>
 
 bool canPartition(vector<int> &nums)

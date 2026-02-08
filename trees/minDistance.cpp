@@ -1,4 +1,5 @@
 // https://practice.geeksforgeeks.org/problems/min-distance-between-two-given-nodes-of-a-binary-tree/1/#
+// Topics: Tree, DFS, LCA
 
 //TC: O(N), SC: O(N)
 Node *lowestCommonAncestor(Node *root, int p, int q)

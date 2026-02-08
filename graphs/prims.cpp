@@ -1,4 +1,5 @@
 // https://practice.geeksforgeeks.org/problems/minimum-spanning-tree/1
+// Topics: Graph, Prim's Algorithm, MST, Greedy
 
 // TC: O(n^2), SC: O(n)
 int spanningTree(int V, vector<vector<int>> adj[])

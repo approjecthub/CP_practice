@@ -1,4 +1,5 @@
 // https://practice.geeksforgeeks.org/problems/bridge-edge-in-graph/1
+// Topics: Graph, DFS, Bridge, Tarjan
 
 void DFS(int parent, int node, int &count,
          vector<int> adj[], vector<int> &strt, vector<int> &end, vector<pair<int, int>> &ans)

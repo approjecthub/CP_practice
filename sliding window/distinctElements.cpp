@@ -1,4 +1,5 @@
 // https://practice.geeksforgeeks.org/problems/count-distinct-elements-in-every-window/1/
+// Topics: Sliding Window, HashMap
 
 vector<int> countDistinct(int A[], int n, int k)
 {

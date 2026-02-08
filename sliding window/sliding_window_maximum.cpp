@@ -1,6 +1,6 @@
 // https://www.udemy.com/course/cpp-data-structures-algorithms-levelup-prateek-narang/learn/quiz/5213108#overview
-
 // https://www.youtube.com/watch?v=CZQGRp93K4k&t=628s
+// Topics: Sliding Window, Deque, Monotonic Queue
 
 #include <bits/stdc++.h>
 

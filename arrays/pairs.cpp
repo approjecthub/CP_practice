@@ -1,4 +1,5 @@
 //https://www.udemy.com/course/cpp-data-structures-algorithms-levelup-prateek-narang/learn/lecture/24428776#overview
+// Topics: Two Pointer, Binary Search, Array
 
 //similar with 2 pair sum
 // done in TC: O(N), and in 1 pass

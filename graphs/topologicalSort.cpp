@@ -1,5 +1,6 @@
 // https://practice.geeksforgeeks.org/problems/topological-sort/1
 // https://www.youtube.com/watch?v=Yh6EFazXipA&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=12
+// Topics: Graph, Topological Sort, DFS, DAG
 
 void DFS(int node, vector<int> adj[], vector<bool> &isVisited, stack<int> &st)
 {

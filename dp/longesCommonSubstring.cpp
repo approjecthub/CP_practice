@@ -1,4 +1,6 @@
 // https://practice.geeksforgeeks.org/problems/longest-common-substring1452/1
+// Topics: Dynamic Programming, LCS Variant, String
+
 int longestCommonSubstr(string s1, string s2, int x, int y)
 {
     // your code here

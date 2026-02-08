@@ -1,4 +1,5 @@
 //check there is a possible subsequence of s1 equals to s2
+// Topics: String, Two Pointer
 
 #include <bits/stdc++.h>
 

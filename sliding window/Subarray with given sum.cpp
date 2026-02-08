@@ -1,4 +1,5 @@
 //https://practice.geeksforgeeks.org/problems/subarray-with-given-sum-1587115621/1#
+// Topics: Sliding Window, Two Pointer, Prefix Sum
 
 vector<int> subarraySum(int arr[], int n, long long s)
     {

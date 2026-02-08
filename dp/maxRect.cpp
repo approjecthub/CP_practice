@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/maximal-rectangle/description/
+// Topics: Dynamic Programming, Stack, Histogram
 
 static int largestRectangleArea(vector<int> &heights)
 {

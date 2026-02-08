@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/
+// Topics: Interval, Greedy, Sorting
 
     static bool customComp(vector<int> &a, vector<int> &b){
         return a[0]<b[0];

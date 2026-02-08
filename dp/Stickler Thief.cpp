@@ -1,4 +1,5 @@
 //https://practice.geeksforgeeks.org/problems/stickler-theif-1587115621/1#
+// Topics: Dynamic Programming, House Robber
 
 int solveTopDown(vector<int> & dp, int arr[], int n){
         if(n<= 0) return 0;

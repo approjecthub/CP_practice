@@ -1,4 +1,6 @@
 // https://practice.geeksforgeeks.org/problems/longest-palindromic-subsequence-1612327878/1
+// Topics: Dynamic Programming, LCS, Palindrome
+
 int longestPalinSubseq(string A)
 {
     // code here

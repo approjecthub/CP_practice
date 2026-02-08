@@ -1,4 +1,5 @@
 // https://practice.geeksforgeeks.org/problems/minimum-cost-of-ropes-1587115620/1#
+// Topics: Heap, Greedy
 
 long long minCost(long long arr[], long long n)
 {

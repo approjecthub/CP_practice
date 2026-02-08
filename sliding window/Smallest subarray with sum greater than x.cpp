@@ -1,3 +1,6 @@
+// https://practice.geeksforgeeks.org/problems/smallest-subarray-with-sum-greater-than-x5651/1
+// Topics: Sliding Window, Two Pointer, Array
+
 class Solution{
   public:
 

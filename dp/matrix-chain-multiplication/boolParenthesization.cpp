@@ -1,4 +1,5 @@
 // https://practice.geeksforgeeks.org/problems/boolean-parenthesization5610/1
+// Topics: Dynamic Programming, MCM, Counting
 
 // my incorrect soln
 int solve(string S, int i, int j, char expr)

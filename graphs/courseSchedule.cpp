@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/course-schedule/
+// Topics: Graph, Topological Sort, Cycle Detection
 
 //topological sorting
 bool canFinish(int numCourses, vector<vector<int>> &prerequisites)

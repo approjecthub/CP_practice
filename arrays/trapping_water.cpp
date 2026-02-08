@@ -1,4 +1,6 @@
 //https://practice.geeksforgeeks.org/problems/trapping-rain-water-1587115621/1
+// Topics: Two Pointer, Stack, Array
+
 #include <bits/stdc++.h>
 
 using namespace std;

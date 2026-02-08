@@ -1,4 +1,5 @@
 //https://www.hackerrank.com/challenges/journey-to-the-moon/problem
+// Topics: Graph, BFS, Connected Components, Counting
 
 int BFS(unordered_map<int, vector<int>> &umap, vector<bool> &visit, int i)
 {

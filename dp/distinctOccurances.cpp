@@ -1,4 +1,5 @@
 // https://practice.geeksforgeeks.org/problems/distinct-occurrences/1
+// Topics: Dynamic Programming, String, Counting
 
 // int solve(string s1, string s2, int x, int y){
 //     if(y==0) return 1;

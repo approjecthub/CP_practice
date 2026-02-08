@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/online-stock-span/
+// Topics: Stack, Monotonic Stack, Design
 
 class StockSpanner
 {

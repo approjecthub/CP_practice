@@ -1,3 +1,5 @@
+// Topics: String, In-place
+
 #include<bits/stdc++.h>
 using namespace std;
 

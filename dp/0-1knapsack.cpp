@@ -1,4 +1,5 @@
 // https://practice.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1
+// Topics: Dynamic Programming, 0/1 Knapsack
 
 int knapSack(int W, int wt[], int val[], int n)
 {

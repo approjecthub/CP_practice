@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/partition-array-for-maximum-sum/description/
+// Topics: Dynamic Programming, MCM, Array
 
 int solve(vector<int> &arr, int idx, int k)
 {

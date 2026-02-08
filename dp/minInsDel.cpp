@@ -1,4 +1,6 @@
 // https://practice.geeksforgeeks.org/problems/minimum-number-of-deletions-and-insertions0209/1
+// Topics: Dynamic Programming, LCS, String
+
 int minOperations(string s1, string s2)
 {
     // Your code goes here

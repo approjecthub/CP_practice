@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/is-graph-bipartite/
+// Topics: Graph, BFS, DFS, Bipartite
 
 class Solution
 {

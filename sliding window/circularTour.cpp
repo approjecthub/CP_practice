@@ -1,4 +1,5 @@
 //https://practice.geeksforgeeks.org/problems/circular-tour-1587115620/1/
+// Topics: Greedy, Queue, Circular Array
 
 int tour(petrolPump p[], int n)
 {

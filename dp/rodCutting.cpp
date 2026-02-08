@@ -1,4 +1,5 @@
 // https://practice.geeksforgeeks.org/problems/rod-cutting0840/1
+// Topics: Dynamic Programming, Unbounded Knapsack
 
 int solve(int price[], int n, int W)
 {

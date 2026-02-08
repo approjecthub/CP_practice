@@ -1,4 +1,5 @@
 // https://practice.geeksforgeeks.org/contest/interview-series-58/problems#
+// Topics: HashMap, Sliding Window, String, Linked List
 
 vector<Node *> findAnagrams(struct Node *head, string s)
 {

@@ -1,4 +1,5 @@
 // https://practice.geeksforgeeks.org/problems/check-for-bst/1/#
+// Topics: BST, Validation, Inorder
 
 pair<int, int> solve(Node *root, bool &ans)
 {

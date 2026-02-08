@@ -1,3 +1,6 @@
+// https://leetcode.com/problems/range-module/
+// Topics: Interval, Design, Binary Search
+
 class RangeModule {
 private:
     vector<pair<int,int>> data;

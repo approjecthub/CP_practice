@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/minimum-number-of-steps-to-make-two-strings-anagram/description/
+// Topics: HashMap, String, Counting
 
 int minSteps(string s, string t)
 {

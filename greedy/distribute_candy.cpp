@@ -1,4 +1,5 @@
 // https://www.interviewbit.com/problems/distribute-candy/
+// Topics: Greedy, Array
 // TC: O(n^2) , SC: O(n)
 
 #include <bits/stdc++.h>

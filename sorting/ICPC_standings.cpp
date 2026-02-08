@@ -1,4 +1,5 @@
 // https://www.udemy.com/course/cpp-data-structures-algorithms-levelup-prateek-narang/learn/quiz/5212390#learning-tools
+// Topics: Custom Sorting, Comparator
 
 /*
 ICPC Standings
