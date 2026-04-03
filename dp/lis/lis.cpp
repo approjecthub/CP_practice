@@ -1,6 +1,9 @@
 // https://leetcode.com/problems/longest-increasing-subsequence/description/
 // Topics: Dynamic Programming, LIS, Binary Search
 
+#include <bits/stdc++.h>
+using namespace std;
+
 // nlogn approach
 void process(vector<int> &temp, int ele)
 {
@@ -65,29 +68,85 @@ int solve(vector<int> &nums, int preIdx, int idx)
         return solve(nums, preIdx, idx + 1);
     }
 }
+/*
+F(preIdx, idx)
+    depends on:
+        F(preIdx, idx+1)
+        F(idx, idx+1)
+
+idx → always increases
+preIdx → can stay same OR become idx
+
+In bottom-up DP, The dimension that strictly increases in recursion, Must be filled in reverse order
+so idx: n → 0, that makes idx the outer reversed loop.
+
+*/
 int lengthOfLIS(vector<int> &nums)
 {
-
     int n = nums.size();
-    vector<vector<int>> dp(n + 1, vector<int>(n + 2, 0));
 
-    for (int i = n - 1; i >= 0; i--)
-    { // currIdx
-        for (int j = i - 1; j >= -1; j--)
-        { // prevIdx
-            if (j == -1 || nums[i] > nums[j])
+    /*
+        dp[curr][prev + 1] represents:
+
+        LIS length starting from index = curr
+        where the previously chosen element index = prev
+
+        We use (prev + 1) because prev can be -1.
+        Mapping:
+            prev = -1  → column 0
+            prev = 0   → column 1
+            prev = 1   → column 2
+            ...
+    */
+    vector<vector<int>> dp(n + 1, vector<int>(n + 1, 0));
+
+    /*
+        Base Case:
+        When curr == n (i.e., beyond last index),
+        LIS length = 0.
+        That is already initialized to 0.
+    */
+
+    // Fill rows from bottom to top
+    // Because dp[curr][...] depends on dp[curr + 1][...]
+    for (int curr = n - 1; curr >= 0; curr--)
+    {
+        // prev can range from -1 up to curr - 1
+        for (int prev = curr - 1; prev >= -1; prev--)
+        {
+            // Option 1: Skip current element
+            int notTake = dp[curr + 1][prev + 1];
+
+            int take = 0;
+
+            // Option 2: Take current element
+            if (prev == -1 || nums[curr] > nums[prev])
             {
-                dp[i][j + 1] = max(1 + dp[i + 1][i + 1], dp[i + 1][j + 1]);
+                /*
+                    If we take nums[curr],
+                    then curr becomes the new "previous index".
+
+                    So next state becomes:
+                        solve(curr, curr + 1)
+
+                    Which maps to:
+                        dp[curr + 1][curr + 1]
+
+                    Explanation:
+                        row  = curr + 1
+                        col  = (newPrev + 1) = (curr + 1)
+                */
+                take = 1 + dp[curr + 1][curr + 1];
             }
-            else
-            {
-                dp[i][j + 1] = dp[i + 1][j + 1];
-            }
+
+            dp[curr][prev + 1] = max(take, notTake);
         }
     }
 
+    // Starting state: curr = 0, prev = -1
     return dp[0][0];
 }
+
 
 // ############################################################################################################
 

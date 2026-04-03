@@ -15,7 +15,13 @@ public:
         int n = image.size(), m = image[0].size();
         que.push({sr, sc});
         int parentColor = image[sr][sc];
-        image[sr][sc] = -1;
+        ///////////////////////
+        // image[sr][sc] = -1;
+        if(parentColor == newColor) return image;
+        image[sr][sc] = newColor;
+
+        //////////////////////
+
         vector<int> rowOffset = {0, 0, 1, -1};
         vector<int> colOffset = {1, -1, 0, 0};
         while (que.size() > 0)
@@ -31,22 +37,23 @@ public:
                 // cout<<"adj: "<<r1<<","<<c1<<endl;
                 if (isValid(r1, c1, parentColor, image))
                 {
-                    image[r1][c1] = -1;
+                    // image[r1][c1] = -1;
+                    image[r1][c1] = newColor;
                     que.push({r1, c1});
                 }
             }
         }
 
-        for (int i = 0; i < n; i++)
-        {
-            for (int j = 0; j < m; j++)
-            {
-                if (image[i][j] == -1)
-                {
-                    image[i][j] = newColor;
-                }
-            }
-        }
+        // for (int i = 0; i < n; i++)
+        // {
+        //     for (int j = 0; j < m; j++)
+        //     {
+        //         if (image[i][j] == -1)
+        //         {
+        //             image[i][j] = newColor;
+        //         }
+        //     }
+        // }
 
         return image;
     }
