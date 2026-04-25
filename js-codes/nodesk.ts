@@ -4,6 +4,9 @@
 /**
  * Definition for a binary tree node.
  */
+
+import { Queue } from "@datastructures-js/queue";
+
 class TreeNode {
   val: number;
   left: TreeNode | null;
@@ -16,50 +19,60 @@ class TreeNode {
 }
 
 function distanceK(
-    root: TreeNode | null,
-    target: TreeNode | null,
-    k: number,
-  ): number[] {
-    if (!root || !target) return [];
-    const disToNode = new Map<number, TreeNode[]>();
-    const que: [number, TreeNode][] = [];
-    let distanceToTarget: number;
-  
-    que.push([0, root]);
-  
-    if (!disToNode.has(0)) disToNode.set(0, []);
-    disToNode.get(0).push(root);
-  
-    while (que.length > 0) {
-      const [level, node] = que.shift();
-  
-      if (node.val === target.val) distanceToTarget = level;
-  
-      if (!disToNode.has(level + 1)) disToNode.set(level + 1, []);
-  
-      if (node.left) {
-        que.push([level + 1, node.left]);
-        disToNode.get(level + 1).push(node.left);
+  root: TreeNode | null,
+  target: TreeNode | null,
+  k: number,
+): number[] {
+  if (!root || !target) return [];
+
+  const queue = new Queue<TreeNode>();
+  const adjacencyList = new Map<TreeNode, TreeNode[]>();
+  queue.enqueue(root);
+
+  // populating undirected graph from tree
+  while (queue.size() > 0) {
+    const node = queue.dequeue();
+    if (!adjacencyList.has(node)) {
+      adjacencyList.set(node, []);
+    }
+
+    if (node.left) {
+      adjacencyList.get(node).push(node.left);
+      if (!adjacencyList.has(node.left)) {
+        adjacencyList.set(node.left, []);
       }
-      if (node.right) {
-        que.push([level + 1, node.right]);
-        disToNode.get(level + 1).push(node.right);
+      adjacencyList.get(node.left).push(node);
+      queue.enqueue(node.left);
+    }
+    if (node.right) {
+      adjacencyList.get(node).push(node.right);
+      if (!adjacencyList.has(node.right)) {
+        adjacencyList.set(node.right, []);
       }
+      adjacencyList.get(node.right).push(node);
+      queue.enqueue(node.right);
     }
-  
-    const ans: number[] = [];
-    if(disToNode.has(k-distanceToTarget)){
-      // distance of nodes from root
-      for(const node of disToNode.get(k-distanceToTarget)){
-          if(node.val !== target.val) ans.push(node.val);
-      }
-      
-    }
-    if(disToNode.has(distanceToTarget-k)){
-      ans.push(...disToNode.get(distanceToTarget-k).map(node => node.val));
-    }
-    if(disToNode.has(distanceToTarget+k)){
-      ans.push(...disToNode.get(distanceToTarget+k).map(node => node.val));
-    }
-    return ans;
   }
+
+  const queueForGT = new Queue<{ node: TreeNode; distance: number }>();
+  queueForGT.enqueue({ node: target, distance: 0 });
+  const visited = new Set<TreeNode>();
+  visited.add(target);
+  const result: number[] = [];
+
+  while (queueForGT.size() > 0) {
+    const { node, distance } = queueForGT.dequeue();
+    if (distance === k) {
+      result.push(node.val);
+    } else {
+      for (const neighbor of adjacencyList.get(node)) {
+        if (!visited.has(neighbor)) {
+          visited.add(neighbor);
+          queueForGT.enqueue({ node: neighbor, distance: distance + 1 });
+        }
+      }
+    }
+  }
+
+  return result;
+}
