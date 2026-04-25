@@ -1,0 +1,21 @@
+{
+  "name": "js-codes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "ts": "tsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "tsx": "^4.20.0",
+    "typescript": "^5.8.0"
+  },
+  "dependencies": {
+    "@datastructures-js/heap": "^4.3.7",
+    "@datastructures-js/queue": "^4.3.0"
+  }
+}
