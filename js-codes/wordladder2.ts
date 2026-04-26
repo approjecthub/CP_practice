@@ -10,16 +10,16 @@ function buildDistanceMap(
   if (!wordSet.has(endWord)) return null;
 
   const dist = new Map<string, number>();
-  dist.set(beginWord, 0);
+  dist.set(endWord, 0);
 
   const queue = new Queue<string>();
-  queue.enqueue(beginWord);
-  let foundEndWord = false;
+  queue.enqueue(endWord);
+  let foundBeginWord = false;
 
   while (queue.size() > 0) {
     const word = queue.dequeue()!;
-    if (word === endWord) {
-      foundEndWord = true;
+    if (word === beginWord) {
+      foundBeginWord = true;
       break;
     }
 
@@ -27,7 +27,7 @@ function buildDistanceMap(
       for (let j = 0; j < 26; j++) {
         const newChar = String.fromCharCode(97 + j);
         const newWord = word.slice(0, i) + newChar + word.slice(i + 1);
-        if (wordSet.has(newWord) && !dist.has(newWord)) {
+        if ((wordSet.has(newWord) || newWord === beginWord) && !dist.has(newWord)) {
           dist.set(newWord, dist.get(word)! + 1);
           queue.enqueue(newWord);
         }
@@ -35,7 +35,7 @@ function buildDistanceMap(
     }
   }
 
-  return foundEndWord ? dist : null;
+  return foundBeginWord ? dist : null;
 }
 
 function DFS(
@@ -61,7 +61,7 @@ function DFS(
       if (
         dictionary.has(newWord) &&
         !visited.has(newWord) &&
-        distMap.get(newWord) === distMap.get(word)! + 1
+        distMap.get(newWord) === distMap.get(word)! - 1
       ) {
         DFS(
           newWord,
