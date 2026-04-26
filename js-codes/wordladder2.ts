@@ -2,68 +2,94 @@
 
 import { Queue } from "@datastructures-js/queue";
 
-function ladderLength(
-    beginWord: string,
-    endWord: string,
-    dictionary: Set<string>,
-  ): number {
-    if (!dictionary.has(endWord)) return 0;
-  
-    const queue = new Queue<{ word: string; level: number }>();
-    queue.enqueue({ word: beginWord, level: 1 });
-    const visited = new Set<string>();
-    visited.add(beginWord);
-  
-    while (queue.size() > 0) {
-      const { word, level } = queue.dequeue()!;
-      if (word === endWord) return level;
-  
-      for (let i = 0; i < word.length; i++) {
-        for (let j = 0; j < 26; j++) {
-          const newChar = String.fromCharCode(97 + j); // 97 is 'a'
-          const newWord = word.slice(0, i) + newChar + word.slice(i + 1);
-  
-          if (dictionary.has(newWord) && !visited.has(newWord)) {
-            visited.add(newWord);
-            queue.enqueue({ word: newWord, level: level + 1 });
-          }
+function buildDistanceMap(
+  beginWord: string,
+  endWord: string,
+  wordSet: Set<string>,
+): Map<string, number> | null {
+  if (!wordSet.has(endWord)) return null;
+
+  const dist = new Map<string, number>();
+  dist.set(beginWord, 0);
+
+  const queue = new Queue<string>();
+  queue.enqueue(beginWord);
+  let foundEndWord = false;
+
+  while (queue.size() > 0) {
+    const word = queue.dequeue()!;
+    if (word === endWord) {
+      foundEndWord = true;
+      break;
+    }
+
+    for (let i = 0; i < word.length; i++) {
+      for (let j = 0; j < 26; j++) {
+        const newChar = String.fromCharCode(97 + j);
+        const newWord = word.slice(0, i) + newChar + word.slice(i + 1);
+        if (wordSet.has(newWord) && !dist.has(newWord)) {
+          dist.set(newWord, dist.get(word)! + 1);
+          queue.enqueue(newWord);
         }
       }
     }
-    return 0;
   }
 
-function DFS(word: string, endWord: string, level: number, visited: Set<string>, dictionary: Set<string>, path: string[], result: string[][]) {
-    if(level === 0 && word === endWord) {
-        result.push([...path]);
-        return;
-    }
-    else if(level === 0) {
-        return;
-    }
-    visited.add(word);
-    
-    for (let i = 0; i < word.length; i++) {
-        for (let j = 0; j < 26; j++) {
-          const newChar = String.fromCharCode(97 + j); // 97 is 'a'
-          const newWord = word.slice(0, i) + newChar + word.slice(i + 1);
-  
-          if (dictionary.has(newWord) && !visited.has(newWord)) {
-            DFS(newWord, endWord, level - 1, visited, dictionary, [...path, newWord], result);
-          }
-        }
-      }
-    visited.delete(word);
+  return foundEndWord ? dist : null;
 }
 
-function findLadders(beginWord: string, endWord: string, wordList: string[]): string[][] {
-    const dictionary = new Set(wordList);
-    const minmPathLen = ladderLength(beginWord, endWord, dictionary);
-    if(minmPathLen === 0) return [];
-    console.log("##### minmPathLen: ", minmPathLen);
+function DFS(
+  word: string,
+  endWord: string,
+  visited: Set<string>,
+  dictionary: Set<string>,
+  distMap: Map<string, number>,
+  path: string[],
+  result: string[][],
+) {
+  if (word === endWord) {
+    result.push([...path]);
+    return;
+  }
+  visited.add(word);
 
-    const result: string[][] = [];
-    const visited = new Set<string>();
-    DFS(beginWord, endWord, minmPathLen-1, visited, dictionary, [beginWord], result);
-    return result;
-};
+  for (let i = 0; i < word.length; i++) {
+    for (let j = 0; j < 26; j++) {
+      const newChar = String.fromCharCode(97 + j); // 97 is 'a'
+      const newWord = word.slice(0, i) + newChar + word.slice(i + 1);
+
+      if (
+        dictionary.has(newWord) &&
+        !visited.has(newWord) &&
+        distMap.get(newWord) === distMap.get(word)! + 1
+      ) {
+        DFS(
+          newWord,
+          endWord,
+          visited,
+          dictionary,
+          distMap,
+          [...path, newWord],
+          result,
+        );
+      }
+    }
+  }
+  visited.delete(word);
+}
+
+function findLadders(
+  beginWord: string,
+  endWord: string,
+  wordList: string[],
+): string[][] {
+  const dictionary = new Set(wordList);
+  const dist = buildDistanceMap(beginWord, endWord, dictionary);
+
+  if (!dist) return [];
+
+  const result: string[][] = [];
+  const visited = new Set<string>();
+  DFS(beginWord, endWord, visited, dictionary, dist, [beginWord], result);
+  return result;
+}
